@@ -50,7 +50,8 @@ function game () { //running the game
     
     let playerScore = 0; // variable to track the player's score
 
-    let n
+    let n;
+
         for (let i = 0; i < 5; i++) {              // for loop to play five rounds     
                     
             playerSelection = prompt("Choose your weapon", 'Rock')
@@ -93,3 +94,7 @@ function game () { //running the game
 
       
 game();
+
+
+
+

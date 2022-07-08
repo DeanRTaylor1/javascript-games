@@ -97,4 +97,45 @@ game();
 
 
 
+/*const container = document.querySelector('#container');
+
+const content = document.createElement('div');
+
+content.style.cssText = "background-color: pink;";
+
+content.classList.add('content');
+content.innerHTML = "<h1>I'm in a div</h1><p>Me too!</p>";
+
+container.appendChild(content);
+
+const newContainer = document.querySelector('#container');
+
+const newContent = document.createElement('div');
+
+newContent.style.cssText = "background-color: gray;";
+
+newContent.classList.add('content');
+newContent.innerHTML = "<h1>I'm in a div</h1><p>Me too!</p>";
+
+newContainer.appendChild(newContent);
+
+
+const btn = document.querySelector('#btn');
+btn.addEventListener('click', function (e) {
+    e.target.style.background = 'blue';
+  });
+
+  // buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    alert(button.id);
+  });
+});*/
+
+
 

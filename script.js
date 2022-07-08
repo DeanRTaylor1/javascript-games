@@ -1,19 +1,24 @@
 const options = ["Rock", "Paper", "Scissors"]; //create array with the possible options of the game
 
-function computerPlay(a) { //create function to select a random option for the computer
+function computerPlay(array) { //create function to select a random option for the computer
 
-    return options[Math.floor(Math.random()*options.length)]; // select a random item from the array options
-            console.log(options);
+    return array[Math.floor(Math.random()*array.length)]; // select a random item from the array options
+            
     }
+    
+    console.log(computerPlay(options));
 
 let computerSelection = computerPlay(options);
+
 let playerInput 
+
 let playerSelection 
+
     console.log(computerSelection);
 
 function trimmer(s) { s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();}
 
-        
+     
         
 
         
@@ -21,28 +26,219 @@ function trimmer(s) { s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();}
      
 
 
-function playRound (a, b){
+function playRound (playerSelection, ComputerSelection){
             
-    if (a != b) {
+    if (playerSelection != ComputerSelection) {
  
-        if (a === "Rock" && b === "Scissors"){return 1;}
+        if (playerSelection === "Rock" && ComputerSelection === "Scissors"){return 1;}
              
-        else if (a === "Paper" && b === "Rock") {return 1}
+        else if (playerSelection === "Paper" && ComputerSelection === "Rock") {return 1}
  
-        else if (a === "Scissors" && b === "Paper") {return 1}
+        else if (playerSelection === "Scissors" && ComputerSelection === "Paper") {return 1}
  
          else return -1
+         
              
         }
         else return 0;
         }
 
 
+
+        const btnRock = document.querySelector("#btnRock");
+        const btnScissors = document.querySelector("#btnScissors");
+        const btnPaper = document.querySelector("#btnPaper");
+        const playerOutput = document.querySelector("#playerScore");
+        const computerOutput = document.querySelector("#computerScore");
+        const resultOutput = document.querySelector("#result");
+        const finalOutput = document.querySelector("#finalScore");
+        let gamesPlayed = 0;
+
+        function scoreCheck (games, playerScore, computerScore){ // check how many games have been played
+
+
+
+          if(games === 5 && playerScore > computerScore) {
+
+            finalOutput.textContent = (`Game over, you win! You got ${playerScore} 
+            points and the computer got ${computerScore} points!`);
+            playerOutput.textContent = 0;
+            computerOutput.textContent = 0;
+            gamesPlayed = 0;
+            resultOutput.textContent = '';
+
+          }
+
+          else if (games === 5 && playerScore < computerScore) { 
+            finalOutput.textContent = (`Game over, you lose! You got ${playerScore} 
+            points and the computer got ${computerScore} points!`);
+            playerOutput.textContent = 0;
+            computerOutput.textContent = 0;
+            gamesPlayed = 0;
+            resultOutput.textContent = '';
+
+
+          }
+
+          else if(games === 5 && playerScore === computerScore){ 
+
+            finalOutput.textContent = (`Game over, you drew! ${playerScore} points each!`);
+            playerOutput.textContent = 0;
+            computerOutput.textContent = 0;
+            gamesPlayed = 0;
+            resultOutput.textContent = '';
+
+          }
+
+          else {
+            
+            console.log(gamesPlayed);
+            finalOutput.textContent = ''
+          
+          }
+          
+
+          
+
+
+
+        }
+
+        
+
+        btnRock.addEventListener('click', () => {
+          
+          
+          gamesPlayed++;          
+          
+
+          let result = playRound('Rock', computerSelection); 
+
+          if(result === 1) { 
+
+          playerOutput.textContent = parseInt(playerOutput.textContent) + 1;
+          resultOutput.textContent = 'Rock Wins';
+
+        } else if (result === -1){
+
+          computerOutput.textContent = parseInt(computerOutput.textContent) + 1;
+          resultOutput.textContent = 'Paper Wins';
+
+        }
+
+        else {
+          
+          playerOutput.textContent = parseInt(playerOutput.textContent) + 1;
+          computerOutput.textContent = parseInt(computerOutput.textContent) + 1;
+          resultOutput.textContent = 'Draw! One point each!';
+        
+        
+        }
+          
+          computerSelection = computerPlay(options);
+          console.log(computerSelection);                             
+          
+          scoreCheck(gamesPlayed, parseInt(playerOutput.textContent),parseInt(computerOutput.textContent));
+
+          
+          
+
+
+        });
+
+
+        btnPaper.addEventListener('click', () => {
+          gamesPlayed++;  
+          let result = playRound('paper', computerSelection);           
+
+          if(result === 1) { 
+
+          playerOutput.textContent = parseInt(playerOutput.textContent) + 1;
+
+        } else if (result === -1){
+
+          computerOutput.textContent = parseInt(computerOutput.textContent) + 1;
+
+        }
+
+        else {
+          
+          playerOutput.textContent = parseInt(playerOutput.textContent) + 1;
+          computerOutput.textContent = parseInt(computerOutput.textContent) + 1;
+          resultOutput.textContent = 'Draw! One point each!';
+        
+        
+        }
+          
+          console.log(playRound('paper', computerSelection));
+          computerSelection = computerPlay(options);
+          console.log(computerSelection);
+          console.log(gamesPlayed);
+          scoreCheck(gamesPlayed, parseInt(playerOutput.textContent),parseInt(computerOutput.textContent));
+          
+
+
+        });
+        
+
+        btnScissors.addEventListener('click', () => {
+
+          gamesPlayed++
+          let result = playRound('Scissors', computerSelection); 
+
+          if(result === 1) { 
+
+          playerOutput.textContent = parseInt(playerOutput.textContent) + 1;
+
+        } else if (result === -1){
+
+          computerOutput.textContent = parseInt(computerOutput.textContent) + 1;
+
+        }
+
+        else {
+          
+          playerOutput.textContent = parseInt(playerOutput.textContent) + 1;
+          computerOutput.textContent = parseInt(computerOutput.textContent) + 1;
+          resultOutput.textContent = 'Draw! One point each!';
+        
+        }
+
+
+          
+          console.log(playRound('Scissors', computerSelection));
+          computerSelection = computerPlay(options);
+          console.log(computerSelection);
+          scoreCheck(gamesPlayed, parseInt(playerOutput.textContent),parseInt(computerOutput.textContent));
+
+
+        });
+
+
+
+
+
+
+        
+
+
+
+
+
+        console.log(btnRock, btnScissors, btnPaper);
+
+
+        //button.addEventListener()
+
+
+
+
+
             
  
          
 
-function game () { //running the game 
+/*function game () { //running the game 
 
            
             
@@ -93,7 +289,7 @@ function game () { //running the game
         
 
       
-game();
+game();*/
 
 
 

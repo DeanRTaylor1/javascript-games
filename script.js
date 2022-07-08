@@ -66,6 +66,8 @@ function playRound (playerSelection, ComputerSelection){
             computerOutput.textContent = 0;
             gamesPlayed = 0;
             resultOutput.textContent = '';
+            alert(`Game over, you win! You got ${playerScore} 
+            points and the computer got ${computerScore} points!`);
 
           }
 
@@ -76,6 +78,8 @@ function playRound (playerSelection, ComputerSelection){
             computerOutput.textContent = 0;
             gamesPlayed = 0;
             resultOutput.textContent = '';
+            alert(`Game over, you lose! You got ${playerScore} 
+            points and the computer got ${computerScore} points!`);
 
 
           }
@@ -87,6 +91,7 @@ function playRound (playerSelection, ComputerSelection){
             computerOutput.textContent = 0;
             gamesPlayed = 0;
             resultOutput.textContent = '';
+            alert(`Game over, you drew! ${playerScore} points each!`);
 
           }
 
@@ -117,12 +122,12 @@ function playRound (playerSelection, ComputerSelection){
           if(result === 1) { 
 
           playerOutput.textContent = parseInt(playerOutput.textContent) + 1;
-          resultOutput.textContent = 'Rock Wins';
+          resultOutput.textContent = 'Rock Wins, congrats here\'s one point!';
 
         } else if (result === -1){
 
           computerOutput.textContent = parseInt(computerOutput.textContent) + 1;
-          resultOutput.textContent = 'Paper Wins';
+          resultOutput.textContent = 'Paper Wins, another one for the machine!';
 
         }
 
@@ -154,10 +159,12 @@ function playRound (playerSelection, ComputerSelection){
           if(result === 1) { 
 
           playerOutput.textContent = parseInt(playerOutput.textContent) + 1;
+          resultOutput.textContent = 'Paper Wins, well done you!';
 
         } else if (result === -1){
 
           computerOutput.textContent = parseInt(computerOutput.textContent) + 1;
+          resultOutput.textContent = 'Scissors Win, computer plus 1!';
 
         }
 
@@ -189,10 +196,13 @@ function playRound (playerSelection, ComputerSelection){
           if(result === 1) { 
 
           playerOutput.textContent = parseInt(playerOutput.textContent) + 1;
+          resultOutput.textContent = 'Scissors Win, add one for you!';
 
         } else if (result === -1){
 
           computerOutput.textContent = parseInt(computerOutput.textContent) + 1;
+          resultOutput.textContent = 'Rock Wins, too bad, one for the computer!';
+
 
         }
 

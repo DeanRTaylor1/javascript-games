@@ -7,19 +7,22 @@
     <title>Rock Paper Scissors</title>
     <script src="script.js" defer></script> 
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f236940be2.js" crossorigin="anonymous"></script>
+   
 
     
 
 </head>
-<body>         
-    <h1>
-        Rock Paper Scissors
-      </h1>
-        <div id="container">
-        <button id="btnRock">Rock</button>
-        <button id="btnPaper">Paper</button>
-        <button id="btnScissors">Scissors</button>
+<body>
+    <div class = "main">       
+        <div class ="header"><h1>Rock Paper Scissors</h1></div> 
+
+        <div class="container">
+        <button class="btn" id="btnRock"><i class="fa-regular fa-hand-back-fist"></i></i></button>
+        <button class="btn" id="btnPaper"><i class="fa-regular fa-paper-plane"></i></button>
+        <button class="btn" id="btnScissors"><i class="fa-regular fa-hand-scissors"></i></button>
     </div>
+
     <div id="Results">
         <div id="player">
         <div id="playerName">Player:</div>
@@ -28,15 +31,19 @@
         <div id="computer">
             <div id="computerName">Computer:</div>
             <div id="computerScore">0</div>
-            </div>  
+            </div> 
+            
+        
         <div id="result"></div>
         <div id="finalScore"></div>
+        
 
 
 
 
 
     </div>
+</div>  
     
     
 </body>

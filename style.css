@@ -98,6 +98,43 @@ gap: 12px;
     flex-grow: 0.3;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
+
+  }
+
+  #player {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+  }
+  #computer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+  }
+
+  #playerScore {
+    font-size: 36px;
+
+
+  }
+
+
+  #computerScore {
+    font-size: 36px;
 
 
   }
